@@ -3,6 +3,7 @@
     "build": "webpack --mode production",
     "clean": "rm -rf dist",
     "clean:all": "npm run clean && rm -rf node_modules && npm install",
+    "deploy": "npm run test && npm run build",
     "format": "npm run format:package-json && npm run prettier:fix",
     "format:package-json": "sort-package-json && prettier --write package.json",
     "lint": "eslint '*/**/*.{ts,tsx}' && npm run prettier:check",
