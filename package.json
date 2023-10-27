@@ -1,6 +1,7 @@
 {
   "scripts": {
     "build": "webpack --mode production",
+    "format:package-json": "sort-package-json && prettier --write package.json",
     "prettier:check": "prettier --check '*/**/*.{ts,tsx}'",
     "prettier:fix": "prettier --write '*/**/*.{ts,tsx}'",
     "start": "webpack serve --mode development",
@@ -21,6 +22,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.0.3",
     "react-test-renderer": "^18.2.0",
+    "sort-package-json": "^2.6.0",
     "ts-jest": "^29.1.1",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
