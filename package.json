@@ -10,7 +10,8 @@
     "prettier:check": "prettier --check '*/**/*.{ts,tsx}'",
     "prettier:fix": "prettier --write '*/**/*.{ts,tsx}'",
     "start": "webpack serve --mode development",
-    "test": "npm run lint && jest"
+    "test": "npm run lint && jest",
+    "watch": "tsc -w"
   },
   "dependencies": {
     "react": "^18.2.0",
