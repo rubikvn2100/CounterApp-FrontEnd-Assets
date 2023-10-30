@@ -1,7 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component matches the snapshot 1`] = `
-<h1>
-  Hello World
-</h1>
+[
+  <nav>
+    <div
+      className="undefined undefined"
+    >
+      <div>
+        <span>
+          Counter
+        </span>
+        <span>
+          App
+        </span>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        ☰
+      </div>
+      <div>
+        <a
+          className=""
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div>
+    <h1>
+      Dummy Home Page
+    </h1>
+  </div>,
+]
 `;
