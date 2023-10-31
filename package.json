@@ -7,8 +7,8 @@
     "format": "npm run format:package-json && npm run prettier:fix",
     "format:package-json": "sort-package-json && prettier --write package.json",
     "lint": "eslint '*/**/*.{ts,tsx}' && npm run prettier:check",
-    "prettier:check": "prettier --check '*/**/*.{ts,tsx,css}'",
-    "prettier:fix": "prettier --write '*/**/*.{ts,tsx,css}'",
+    "prettier:check": "prettier --check '{src,test}/**/*.{ts,tsx,css}'",
+    "prettier:fix": "prettier --write '{src,test}/**/*.{ts,tsx,css}'",
     "start": "webpack serve --mode development",
     "test": "npm run lint && jest",
     "watch": "tsc -w"
