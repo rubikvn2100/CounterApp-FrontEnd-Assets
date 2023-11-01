@@ -31,9 +31,9 @@ exports[`App component matches the snapshot 1`] = `
     </div>
   </nav>,
   <div>
-    <h1>
+    <div>
       Dummy Home Page
-    </h1>
+    </div>
   </div>,
 ]
 `;
