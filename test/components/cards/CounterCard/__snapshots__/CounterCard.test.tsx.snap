@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CounterCard renders correctly 1`] = `
+<div>
+  <div>
+    Counter: 
+    0
+  </div>
+  <div
+    onClick={[Function]}
+  >
+    Increment
+  </div>
+</div>
+`;

@@ -1,0 +1,38 @@
+.card {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #0000007f;
+  border-radius: 1.5rem;
+  background-color: #f4ece6f0;
+  box-shadow: -10px 10px 10px #0000003f;
+  padding: 1.5rem;
+}
+
+.counterDisplay {
+  font-size: 2rem;
+}
+
+.incrementButton {
+  margin-top: 2rem;
+  border: 2px solid #ffffff;
+  border-radius: 1000px;
+  background-color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #000000;
+  transition: all 0.2s ease;
+}
+
+@media (hover: hover) {
+  .incrementButton:hover {
+    color: #777777;
+    background-color: transparent;
+  }
+}
+
+.incrementButton:active {
+  color: #777777;
+  background-color: transparent;
+}

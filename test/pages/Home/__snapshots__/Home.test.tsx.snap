@@ -3,7 +3,17 @@
 exports[`Home component matches the snapshot 1`] = `
 <div>
   <div>
-    Dummy Home Page
+    <div>
+      <div>
+        Counter: 
+        0
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        Increment
+      </div>
+    </div>
   </div>
 </div>
 `;

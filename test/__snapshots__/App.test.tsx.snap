@@ -32,7 +32,17 @@ exports[`App component matches the snapshot 1`] = `
   </nav>,
   <div>
     <div>
-      Dummy Home Page
+      <div>
+        <div>
+          Counter: 
+          0
+        </div>
+        <div
+          onClick={[Function]}
+        >
+          Increment
+        </div>
+      </div>
     </div>
   </div>,
 ]
