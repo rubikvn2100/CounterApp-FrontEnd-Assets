@@ -1,22 +1,32 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import renderer from "react-test-renderer";
-import CounterCard from "../../../../src/components/cards/CounterCard/CounterCard";
+import { CounterCardContent } from "../../../../src/components/cards/CounterCard/CounterCard";
+import { useCounterSession } from "../../../../src/contexts/CounterSessionContextProvider";
 
-describe("CounterCard", () => {
-  test("renders correctly", () => {
-    const tree = renderer.create(<CounterCard />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+jest.mock("../../../../src/contexts/CounterSessionContextProvider", () => ({
+  useCounterSession: jest.fn(),
+}));
 
-  test("increments counter on button click", () => {
-    const { getByText } = render(<CounterCard />);
-    const incrementButton = getByText(/Increment/i);
-    const counterDisplay = getByText(/Counter: 0/i);
+const mockUseCounterSession = useCounterSession as jest.Mock;
 
-    fireEvent.click(incrementButton);
+const renderWithMockedContext = (sessionStatus: string) => {
+  mockUseCounterSession.mockImplementation(() => ({
+    counter: 5,
+    sessionStatus,
+    addTimestamp: jest.fn(),
+    reconnect: jest.fn(),
+  }));
 
-    expect(counterDisplay).toHaveTextContent("Counter: 1");
-  });
+  return renderer.create(<CounterCardContent />).toJSON();
+};
+
+describe("CounterCardContent", () => {
+  test.each([["Connecting"], ["Live"], ["Stopped"], ["InvalidStatus"]])(
+    "matches snapshot with sessionStatus: %s",
+    (status) => {
+      const tree = renderWithMockedContext(status);
+      expect(tree).toMatchSnapshot();
+    },
+  );
 });

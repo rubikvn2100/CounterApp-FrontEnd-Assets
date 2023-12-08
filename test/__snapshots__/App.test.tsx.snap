@@ -37,10 +37,8 @@ exports[`App component matches the snapshot 1`] = `
           Counter: 
           0
         </div>
-        <div
-          onClick={[Function]}
-        >
-          Increment
+        <div>
+          Connecting
         </div>
       </div>
     </div>

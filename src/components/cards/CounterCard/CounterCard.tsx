@@ -1,20 +1,62 @@
-import React, { useState } from "react";
+import React from "react";
+import {
+  CounterSessionProvider,
+  useCounterSession,
+} from "../../../contexts/CounterSessionContextProvider";
 import styles from "./CounterCard.module.css";
 
-const CounterCard: React.FC = () => {
-  const [count, setCount] = useState(0);
+export const CounterCardContent: React.FC = () => {
+  const { counter, sessionStatus, addTimestamp, setReconnect } =
+    useCounterSession();
 
-  const increment = () => {
-    setCount(count + 1);
+  const renderControlButton = () => {
+    switch (sessionStatus) {
+      case "Connecting":
+        return <div className={styles.incrementButton}>{sessionStatus}</div>;
+
+      case "Live":
+        return (
+          <div
+            onClick={() => {
+              addTimestamp();
+            }}
+            className={styles.incrementButton}
+          >
+            Increment
+          </div>
+        );
+
+      case "Stopped":
+        return (
+          <div
+            onClick={() => {
+              setReconnect();
+            }}
+            className={styles.incrementButton}
+          >
+            Reconnect
+          </div>
+        );
+
+      default:
+        console.error("Unknown session status:", sessionStatus);
+        return null;
+    }
   };
 
   return (
     <div className={styles.card}>
-      <div className={styles.counterDisplay}>Counter: {count}</div>
-      <div onClick={increment} className={styles.incrementButton}>
-        Increment
-      </div>
+      <div className={styles.counterDisplay}>Counter: {counter}</div>
+      {renderControlButton()}
     </div>
+  );
+};
+
+const CounterCard: React.FC = () => {
+  return (
+    <CounterSessionProvider>
+      <CounterCardContent />
+    </CounterSessionProvider>
   );
 };
 

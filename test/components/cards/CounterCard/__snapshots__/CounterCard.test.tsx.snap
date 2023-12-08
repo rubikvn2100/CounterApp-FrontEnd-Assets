@@ -1,15 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CounterCard renders correctly 1`] = `
+exports[`CounterCardContent matches snapshot with sessionStatus: Connecting 1`] = `
 <div>
   <div>
     Counter: 
-    0
+    5
+  </div>
+  <div>
+    Connecting
+  </div>
+</div>
+`;
+
+exports[`CounterCardContent matches snapshot with sessionStatus: InvalidStatus 1`] = `
+<div>
+  <div>
+    Counter: 
+    5
+  </div>
+</div>
+`;
+
+exports[`CounterCardContent matches snapshot with sessionStatus: Live 1`] = `
+<div>
+  <div>
+    Counter: 
+    5
   </div>
   <div
     onClick={[Function]}
   >
     Increment
+  </div>
+</div>
+`;
+
+exports[`CounterCardContent matches snapshot with sessionStatus: Stopped 1`] = `
+<div>
+  <div>
+    Counter: 
+    5
+  </div>
+  <div
+    onClick={[Function]}
+  >
+    Reconnect
   </div>
 </div>
 `;
