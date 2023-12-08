@@ -11,6 +11,7 @@
     "prettier:fix": "prettier --write '{src,test}/**/*.{ts,tsx,css}'",
     "start": "webpack serve --mode development",
     "test": "npm run lint && jest",
+    "test:update": "jest -u",
     "watch": "tsc -w"
   },
   "dependencies": {
